@@ -1,0 +1,59 @@
+﻿@model IEnumerable < AdminProductos.Models.Producto>
+@{
+    ViewBag.Title = "ListaProductos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+        <h2>Lista Productos</h2>
+
+            @using (Html.BeginForm("ListaProductos", "Producto", FormMethod.Post))
+            {
+                <input type="search" name="cadena" value="" />
+                <button type="submit" class="btn btn-success">Buscar</button>
+            }
+
+            <p>
+                @Html.ActionLink("Crear nuevo", "CrearProducto")
+            </p>
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Detalle)
+                </th>
+                <th>
+                    <label>ID Categoria</label>
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Detalle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id_Categoria)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "EditarProducto", new { id = item.Id }) |
+                        @Html.ActionLink("Eliminar", "EliminarProducto", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
