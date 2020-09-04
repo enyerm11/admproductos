@@ -1,12 +1,15 @@
 # AdministradorProductos
 
-Sustentantes:
+Sustentantes
+
 María Alt. Núñez José 07-SISN-1-258
+
 Enyer Misael Peña Jiménez 17-EISN-1-009
 
 Universidad Dominicana   O & M
 
 Materia: Administracion de servidores
+
 sección: 0908
 
 Antes que nada aclarar que el código está comentado de forma interna, a continuación un resumen:
